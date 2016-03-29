@@ -1,6 +1,6 @@
 {
   "name": "tadpoll",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple polling web-app",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,9 @@
     "webpack-dev-build": "webpack --progress --hide-modules",
     "webpack-production-build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "babel-watch-server": "babel server --watch --out-dir server_build",
-    "nodemon-server": "nodemon --debug server_build/app.js"
+    "babel-build": "babel server --out-dir server_build",
+    "nodemon-server": "nodemon --debug server_build/app.js",
+    "build-all": "npm run babel-build && npm run webpack-production-build"
   },
   "author": "Ron Wade-Megghross",
   "license": "GPL-2.0",
