@@ -1,0 +1,84 @@
+@import "../../node_modules/bootstrap/scss/variables";
+@import "palette";
+
+
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+$gray-dark:                 #373a3c;
+$gray:                      #55595c;
+$gray-light:                #818a91;
+$gray-lighter:              #eceeef;
+$gray-lightest:             #f7f7f9;
+
+$brand-primary:             $deep-purple-500;
+$brand-success:             #5cb85c;
+$brand-info:                #5bc0de;
+$brand-warning:             #f0ad4e;
+$brand-danger:              #d9534f;
+
+$button-inactive:           $blue-grey-300;
+$button-hover:              $blue-grey-700;
+$button-active:             $brand-primary;
+
+$btn-primary-bg:                 $brand-primary; //for some reason i don't understand, i had to redeclare this varible to make it show the custom $brand-primary instead of the default one
+$btn-primary-border:             $btn-primary-bg;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:                    $blue-grey-50;
+$body-color:                 $blue-grey-600;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-flex:               false;
+$enable-rounded:            true;
+$enable-shadows:            false;
+$enable-gradients:          false;
+$enable-transitions:        false;
+$enable-hover-media-query:  false;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:     Source-Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:          Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-base:           $font-family-sans-serif;
+
+// Grid breakpoints
+//
+// Define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  // Small screen / phone
+  sm: 640px,
+  // Medium screen / tablet
+  md: 768px
+);
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 500px,
+  md: 640px
+);
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:                 $brand-primary;
+$link-decoration:            none;
+$link-hover-color:           darken($link-color, 15%);
+$link-hover-decoration:      none;

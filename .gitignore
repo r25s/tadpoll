@@ -1,0 +1,5 @@
+.idea
+node_modules
+server/database.js
+client_build/build.js*
+server_build/
