@@ -1,6 +1,6 @@
 {
   "name": "tadpoll",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A simple polling web-app",
   "main": "index.js",
   "scripts": {
@@ -33,6 +33,7 @@
   "devDependencies": {
     "autoprefixer": "^6.2.3",
     "autoprefixer-loader": "^3.1.0",
+    "babel-cli": "^6.6.5",
     "babel-core": "^6.4.0",
     "babel-loader": "^6.2.1",
     "babel-plugin-transform-runtime": "^6.4.0",
