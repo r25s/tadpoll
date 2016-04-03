@@ -178,10 +178,10 @@ io.on('connection', function(socket) {
 	})
 });
 
-function startChangefeed(io, pollId) { //TODO: .get().pluck().changes() doesn't work. Only works without pluck, even though the docs say otherwise.
+function startChangefeed(io, pollId) {
 	rethink.table(pollsTable)
 		.get(pollId)
-		//.pluck('question', 'options')
+		//.pluck('question', 'options') //TODO: .get().pluck().changes() doesn't work. Only works without pluck, even though the docs say otherwise.
 		.changes({includeInitial: true})
 		.run(connection, function(error, cursor) {
 			cursor.on("data", function(data) {
