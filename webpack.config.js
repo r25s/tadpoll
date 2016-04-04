@@ -1,5 +1,6 @@
-var vue = require('vue-loader')
-var webpack = require('webpack')
+var vue = require('vue-loader');
+var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	entry: './client/main.js',
@@ -12,18 +13,14 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			$: "jquery",
 			jQuery: "jquery"
-		})
+		}),
+		new ExtractTextPlugin('styles.css')
 	],
 	module: {
 		loaders: [
 			{
 				test: /\.scss|css$/,
-				loaders: [
-					'style',
-					'css?sourceMap',
-					'autoprefixer?browsers=last 2 versions',
-					'sass?sourceMap'
-				]
+				loader: ExtractTextPlugin.extract('css-loader?sourceMap!autoprefixer-loader?browsers=last 2 versions!sass-loader?sourceMap')
 			},
 			{
 				test: /\.vue$/,
@@ -49,7 +46,6 @@ module.exports = {
 				test: /Chart.min.js$/,
 				loader: 'script'
 			}
-
 		]
 	},
 	babel: {

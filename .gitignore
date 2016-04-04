@@ -3,4 +3,5 @@ node_modules
 npm-debug.log
 server/database.js
 client_build/build.js*
+client_build/styles.css*
 server_build/
