@@ -1,6 +1,6 @@
 {
   "name": "tadpoll",
-  "version": "0.1.4",
+  "version": "0.1.7",
   "description": "A simple polling web-app",
   "main": "index.js",
   "scripts": {
