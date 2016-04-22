@@ -1,13 +1,21 @@
-var vue = require('vue-loader');
-var webpack = require('webpack');
+const path = require('path');
+const vue = require('vue-loader');
+const webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const PATHS = {
+	main: path.resolve(__dirname, 'client'),
+	build: path.resolve(__dirname, 'client_build')
+};
+
 module.exports = {
-	entry: './client/main.js',
+	entry: {
+		main: PATHS.main
+	},
 	output: {
-		path:  __dirname + '/client_build',
-		publicPath: 'client_build/',
-		filename: 'build.js'
+		path: PATHS.build,
+		filename: 'build.js',
+		publicPath: 'client_build/'
 	},
 	plugins: [
 		new webpack.ProvidePlugin({
@@ -20,7 +28,12 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.scss|css$/,
-				loader: ExtractTextPlugin.extract('css-loader?sourceMap!autoprefixer-loader?browsers=last 2 versions!sass-loader?sourceMap')
+				loader: ExtractTextPlugin.extract(
+					'css-loader?sourceMap' +
+					'!autoprefixer-loader?browsers=last 2 versions' +
+					'!sass-loader?sourceMap'
+				),
+				include: PATHS.main
 			},
 			{
 				test: /\.vue$/,
@@ -52,7 +65,7 @@ module.exports = {
 		presets: ['es2015'],
 		plugins: ['transform-runtime']	
 	}
-}
+};
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.plugins = module.exports.plugins.concat([

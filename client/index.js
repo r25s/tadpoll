@@ -1,5 +1,5 @@
 // import core css
-//import './scss/theme.scss'
+import './scss/theme.scss'
 
 // import core libraries:
 import Vue from 'vue'
