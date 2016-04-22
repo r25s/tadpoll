@@ -77,7 +77,7 @@ h3 {
 }
 
 ::-moz-placeholder {
-  @include placeholder;
+  color: $blue-grey-700;
 }
 
 ::-webkit-input-placeholder {
