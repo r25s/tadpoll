@@ -54,7 +54,7 @@
 	<div class="container" v-show="pollCreated">
 		<div class="createdMessage">
 			<p>Your poll was created at the following URL:</p>
-			<a v-link="{ path: '/'+pollURL }">tadpoll.ml/{{pollURL}}</a>
+			<a v-link="{ path: '/'+pollURL }">{{hostName}}/{{pollURL}}</a>
 		</div>
 	</div>
 </template>
@@ -91,6 +91,9 @@
 			},
 			multiVote() {
 				return store.state.settings.multiVote
+			},
+			hostName() {
+				return window.location.host
 			}
 		},
 
