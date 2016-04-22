@@ -40,9 +40,13 @@ module.exports = {
 				loader: 'vue'
 			},
 			{
-				// edit this for additional asset file types
+				test: /\.ttf|.eot|.woff|webfont.svg$/,
+				loader: 'url'
+			},
+			{
 				test: /\.(png|jpg|gif|svg)$/,
-				loader: 'file?name=./build/images/[name].[ext]?[hash]'
+				exclude: /webfont.svg$/,
+				loader: 'file?name=' + PATHS.build + '/images/[name].[ext]?[hash]'
 			},
 			{
 				test: /\.js$/,
@@ -50,10 +54,6 @@ module.exports = {
 				// for normal use cases only node_modules is needed.
 				exclude: /node_modules|vue\/dist|vue-router\/|vue-loader\/|vue-hot-reload-api\/|vuex\//,
 				loader: 'babel'
-			},
-			{
-				test: /\.ttf$/,
-				loader: 'url'
 			},
 			{
 				test: /Chart.min.js$/,
