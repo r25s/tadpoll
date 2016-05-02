@@ -87,7 +87,7 @@
 			},
 
 			unitWidth() {
-				return simpleRound(250 / this.mostVotes, 3);
+				return this.mostVotes > 0 ? simpleRound(250 / this.mostVotes, 3) : 0;
 			},
 
 			totalVotes() {
