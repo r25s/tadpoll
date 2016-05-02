@@ -300,3 +300,69 @@ p.sub-heading {
   text-align: center;
   font-size: 1.125rem;
 }
+
+// Poll Results Component
+div.bar {
+  display: inline-block;
+  height: 20px;
+  width: 50px;
+  float: left;
+  background-color: $blue-grey-500;
+}
+
+div.bar-chart {
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  p {
+    margin: 0;
+  }
+
+  p.option-votes {
+    margin-left: 10px;
+    float: left;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  div.row {
+    border-bottom: 1px dashed $blue-grey-300;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+div.chart-col {
+  height: 30px;
+}
+
+@include media-breakpoint-up(md) {
+  div.title-col {
+    border-right: 1px solid $blue-grey-300;
+  }
+}
+
+p.option-title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+  @include media-breakpoint-up(md) {
+    text-align: right;
+  }
+}
+
+div.row.most-votes {
+  color: $brand-primary;
+
+  div.bar {
+    background-color: $brand-primary;
+  }
+}
+
+#total-votes {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

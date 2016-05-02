@@ -92,7 +92,7 @@
 			multiVote() {
 				return store.state.settings.multiVote
 			},
-			hostName() {
+			hostName() { //TODO: make this a data() function instead of computed function
 				return window.location.host
 			}
 		},
